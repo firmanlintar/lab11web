@@ -2,8 +2,8 @@
 
 |  | |
 | ----------- | ----------- |
-| <b> Nama     | Aditya Bani Isro       |
-| <b> NIM     | 312010134       |
+| <b> Nama     | Firman Lintar Nurrohman       |
+| <b> NIM     | 31201097       |
 | <b> Kelas   | TI.20.A.1        |
 | <b> Matakuliah   | Pemrograman Web        |
 | <b> Praktikum     | <a href="#p11">11</a>, <a href="#p12">12</a>, <a href="#p13">13</a>, <a href="#p14">14</a></td>  |
@@ -28,12 +28,12 @@ Berikut beberapa ekstensi yang perlu diaktifkan:
 Untuk mengaktifkan ekstentsi tersebut, melalu XAMPP Control Panel, pada bagian
 Apache klik ``Config -> PHP.ini``
 
-![img1](assets/img/1.png)
+![img1](assets/img/11.1.png)
 
 Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan
 diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server.
 
-![img2](assets/img/2.PNG)
+![img2](assets/img/11.2.PNG)
 
 ## Instalasi  Codeigniter 4
 Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan menggunakan composer. Pada praktikum ini kita menggunakan cara
@@ -43,13 +43,13 @@ manual.
 - Ubah nama direktory framework-4.x.xx menjadi ci4.
 - Buka browser dengan alamat http://localhost/lab11_ci/ci4/public/
 
-![img3](assets/img/3.PNG)
+![img3](assets/img/11.3.PNG)
 
 ## Menjalankan CLI (Command Line Interface)
 Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk
 mengakses CLI buka terminal/command prompt.
 
-![img4](assets/img/2.1.PNG)
+![img4](assets/img/11.4.PNG)
 
 Arahkan lokasi direktori sesuai dengan direktori kerja project dibuat ``(xampp/htdocs/lab11_ci/ci4/)``.
 
@@ -58,32 +58,32 @@ Perintah yang dapat dijalankan untuk memanggil CLI Codeigniter adalah :
 php spark
 ```
 
-![img5](assets/img/2.2.PNG)
+![img5](assets/img/11.5.PNG)
 
 ## Mengaktifkan Mode Debugging
 - Ketik ``php spark serve`` pada CLI untuk menjalankan.
 
-![img6](assets/img/00.PNG)
+![img6](assets/img/11.6.PNG)
 
 - Menampilkan pesan error, untuk mencobanya ubah kode file ``app/Controllers/home.php``, hapus ;nya.
 
-![img7](assets/img/3.1.PNG)
+![img7](assets/img/11.7.PNG)
 
 - Ketik ``http://localhost:8080`` pada browser. Berikut tampilan error nya.
 
-![img8](assets/img/3.2.PNG)
+![img8](assets/img/11.8.PNG)
 
 - Kemudian, ubah nama file ``env`` menjadi ``.env``. Masuk ke dalam filenya, hapus tanda ``#`` pada ``CI_ENVIRONMENT =``
 
-![img9](assets/img/3.3.PNG)
+![img9](assets/img/11.9.PNG)
 
 - Refresh url sebelumnya, Berikut tampilan error nya.
 
-![img10](assets/img/3.4.PNG)
+![img10](assets/img/11.10.PNG)
 
 ## Struktur Direktori
 
-![img11](assets/img/3.5.PNG)
+![img11](assets/img/11.11.PNG)
 
 ## Routing and Controller
 Router terletak pada file ``app/config/Routes.php``
@@ -96,18 +96,18 @@ $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 ```
 
-![img8](assets/img/3.6.PNG)
+![img8](assets/img/11.12.PNG)
 
 Untuk mengetahui route yang ditambahkan sudah benar, buka CLI dan jalankan
 perintah berikut.
 ```
 php spark routes
 ```
-![img8](assets/img/3.7.PNG)
+![img8](assets/img/11.13.PNG)
 
 Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url http://localhost:8080/about
 
-![img8](assets/img/3.8.PNG)
+![img8](assets/img/11.14.PNG)
 
 ## Membuat Controller
 Selanjutnya adalah membuat Controller Page. Buat file baru dengan nama ``page.php`` pada direktori Controller kemudian isi kodenya seperti berikut.
@@ -132,18 +132,18 @@ class Page extends BaseController
     }
 }
 ```
-![img8](assets/img/4.1.PNG)
+![img8](assets/img/11.15.PNG)
 
 Selanjutnya refresh Kembali browser, maka akan ditampilkan hasilnya yaitu halaman sudah dapat diakses.
 
-![img8](assets/img/4.2.PNG)
+![img8](assets/img/11.16.PNG)
 
 - Auto Routing
 Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat mengubah nilai variabelnya. Untuk menonaktifkan ubah nilai ``true`` menjadi ``false``.
 ```php
 $routes->setAutoRoute(true);
 ```
-![img8](assets/img/4.3.PNG)
+![img8](assets/img/11.17.PNG)
 
 Tambahkan method baru pada Controller Page seperti berikut.
 ```php
@@ -152,11 +152,11 @@ public function tos()
     echo "ini halaman Term of Services";
 }
 ```
-![img8](assets/img/4.4.PNG)
+![img8](assets/img/11.18.PNG)
 
 Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan alamat: http://localhost:8080/page/tos
 
-![img8](assets/img/4.5.PNG)
+![img8](assets/img/11.19.PNG)
 
 ## Membuat View
 Selanjutnya adalam membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan nama ``about.php`` pada direktori view ``(app/view/about.php)`` kemudian isi kodenya seperti berikut.
@@ -174,7 +174,7 @@ Selanjutnya adalam membuat view untuk tampilan web agar lebih menarik. Buat file
     </body>
 </html>
 ```
-![img8](assets/img/5.1.PNG)
+![img8](assets/img/11.20.PNG)
 
 Ubah ``method about`` pada class ``Controller Page`` menjadi seperti berikut:
 ```php
@@ -186,15 +186,15 @@ public function about()
         ]);
 }
 ```
-![img8](assets/img/5.2.PNG)
+![img8](assets/img/11.21.PNG)
 
 Kemudian lakukan refresh pada halaman tersebut.
-![img8](assets/img/5.3.PNG)
+![img8](assets/img/11.22.PNG)
 
 ## Membuat Layout Web dengan CSS
 Buat file css pada direktori ``public`` dengan nama ``style.css`` (copy file dari praktikum ``lab4_layout``. Kita akan gunakan layout yang pernah dibuat pada praktikum 4.
 
-![img8](assets/img/6.1.PNG)
+![img8](assets/img/11.23.PNG)
 
 Kemudian buat folder template pada direktori view kemudian buat file ``header.php`` dan ``footer.php``
 ```php
@@ -219,10 +219,10 @@ Kemudian buat folder template pada direktori view kemudian buat file ``header.ph
         <section id="wrapper">
             <section id="main">
 ```
-![img8](assets/img/6.2.PNG)
+![img8](assets/img/11.24.PNG)
 
 File ``app/view/template/footer.php``
-![img8](assets/img/6.3.PNG)
+![img8](assets/img/11.25.PNG)
 
 Kemudian ubah file ``app/view/about.php`` seperti berikut.
 ```php
@@ -232,11 +232,11 @@ Kemudian ubah file ``app/view/about.php`` seperti berikut.
 <p><?= $content; ?></p>
 <?= $this->include('template/footer'); ?>
 ```
-![img8](assets/img/6.4.PNG)
+![img8](assets/img/11.25.PNG)
 
 Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 
-![img8](assets/img/6.5.PNG)
+![img8](assets/img/11.26.PNG)
 
 # Pertanyaan dan Tugas
 Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada navigasi header dapat menampilkan tampilan dengan layout yang sama.
@@ -244,7 +244,7 @@ Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga
 # Jawaban
 - Ubah isi pada Routes.php menjadi berikut,
 
-![img8](assets/img/7.1.PNG)
+![img8](assets/img/11.27.PNG)
 
 - Pada ``Controllers/page.php``, menjadi berikut
 ```php
@@ -320,7 +320,7 @@ Pada masing-masing file di dalam Views, buat file baru denga nama : ``rumah.php`
 Untuk melihat hasilnya dengan menggunakan
 alamat: http://localhost:8080/rumah
 
-![img8](assets/img/finish.PNG)
+![img8](assets/img/11.28.PNG)
 
 <div id="p12">
 
